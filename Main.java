@@ -14,14 +14,14 @@ import javax.security.auth.login.LoginException;
 
 public class Main {
     public static void main(String[] args) throws LoginException {
-        JDABuilder jda = JDABuilder.createDefault("TOKEN");
-        jda.setActivity(Activity.watching("Made by Prach#9333"));
-        jda.setStatus(OnlineStatus.DO_NOT_DISTURB);
-        jda.addEventListeners(new commands(), new onJoinListener(), new onLeaveListener());
-        jda.setChunkingFilter(ChunkingFilter.ALL);
-        jda.setMemberCachePolicy(MemberCachePolicy.ALL);
+        JDABuilder jda = JDABuilder.createDefault("TOKEN"); //Spojení s API Discordu přes TOKEN
+        jda.setActivity(Activity.watching("Made by Prach#9333")); //Nastavení aktivity robota
+        jda.setStatus(OnlineStatus.DO_NOT_DISTURB); 
+        jda.addEventListeners(new commands(), new onJoinListener(), new onLeaveListener()); //Připojení ostatních tříd
+        jda.setChunkingFilter(ChunkingFilter.ALL); //Nastavení filtrování
+        jda.setMemberCachePolicy(MemberCachePolicy.ALL); //Nastavení vnímání uživatelů
         jda.enableIntents(GatewayIntent.GUILD_MEMBERS);
-        jda.build();
+        jda.build(); //Spuštění kompletního programu
     }
 }
 
