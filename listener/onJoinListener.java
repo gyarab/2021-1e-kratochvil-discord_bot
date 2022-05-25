@@ -7,8 +7,8 @@ public class onJoinListener extends ListenerAdapter {
 
     @Override
 
-    public void onGuildMemberJoin(GuildMemberJoinEvent event) {
-        event.getGuild().getTextChannelById(664847658585686044L).sendMessage
-                ("Nazdar " + event.getMember().getUser().getAsMention()).queue();
+    public void onGuildMemberJoin(GuildMemberJoinEvent event) { //Metoda Listeneru
+        event.getGuild().getTextChannelById(664847658585686044L).sendMessage 
+                ("Nazdar " + event.getMember().getUser().getAsMention()).queue(); //Odeslání zprávy
     }
 }
