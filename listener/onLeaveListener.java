@@ -7,8 +7,8 @@ public class onLeaveListener extends ListenerAdapter {
 
     @Override
 
-    public void onGuildMemberRemove(GuildMemberRemoveEvent event) {
+    public void onGuildMemberRemove(GuildMemberRemoveEvent event) { //Metoda Listeneru
         event.getGuild().getTextChannelById(664847658585686044L).sendMessage
-                ("Pápá " + event.getMember().getUser().getAsMention()).queue();
+                ("Pápá " + event.getMember().getUser().getAsMention()).queue(); //Odeslání zprávy
     }
 }
